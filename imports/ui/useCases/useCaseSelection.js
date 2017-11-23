@@ -23,7 +23,7 @@ var app = null;
 var qix = null;
 
 
-var possibleRoles = ['Developer', 'Product Owner', 'Hosting Ops', 'Business Analyst', 'CTO', 'C-Level, non-technical'];
+var possibleRoles = ['Business Manager', 'Product Manager', 'Developer'];
 
 // ONCREATED
 Template.useCaseSelection.onCreated(async function() {
