@@ -1,3 +1,2 @@
-REM cd C:\Github\QRSMeteor
-REM set ROOT_URL = http://localhost;
+cd C:\Users\Qlikexternal\Documents\GitHub\QRSMeteor
 meteor run --settings settings-development.json --port 3000

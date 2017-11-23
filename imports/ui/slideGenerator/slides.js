@@ -24,7 +24,7 @@ Template.slides.onDestroyed(function() {
 })
 
 Template.slides.onRendered(function() {
-    console.log('slides template rendered');
+    // console.log('slides template rendered');
     if (!Session.get('slideData')) {
         console.log('------------------------------------');
         console.log('No slide data present in session, reroute the use back to the useCaseSelection screen.');
@@ -37,7 +37,7 @@ Template.slides.onRendered(function() {
 
 function initializeReveal() {
     window.Reveal = Reveal;
-    console.log('initializeReveal', Reveal);
+    // console.log('initializeReveal', Reveal);
     try {
         Reveal.initialize({
             width: window.innerWidth - 80,
@@ -78,7 +78,7 @@ function initializeReveal() {
 //
 
 Template.slideContent.onRendered(function() {
-    // this.subscribe('tracker');
+    this.subscribe('tracker');
     Tracker.insert({
         userId: Meteor.userId,
         userName: Meteor.user().profile.name,
@@ -167,7 +167,7 @@ Template.registerHelper('formatted', function(text) {
     // ─── YOUTUBE ────────────────────────────────────────────────────────────────────
     //
     if (youtube_parser(text)) { //youtube video url
-        console.log('found an youtube link so embed with the formatting of semantic ui', text)
+        // console.log('found an youtube link so embed with the formatting of semantic ui', text)
         var videoId = youtube_parser(text);
         var html = '<div class="ui container videoPlaceholder"><div class="ui embed" data-source="youtube" data-id="' + videoId + '" data-icon="video" data-placeholder="images/youtube.jpg"></div></div>'
             // console.log('generated video link: ', html);
@@ -207,7 +207,7 @@ Template.registerHelper('formatted', function(text) {
     // ─── IMAGE ──────────────────────────────────────────────────────────────────────
     //        
     else if (checkTextIsImage(text)) {
-        return '<img class="ui massive rounded bordered image"  src="images/' + text + '"/>';
+        return '<div class="ui container"> <img class="ui massive rounded bordered image"  style="width: 100%;" src="images/' + text + '"/></div>';
     } else if (text.startsWith(embeddedImageMarker)) { //embedded image in text
         var textMarker = text.split(embeddedImageMarker).pop();
         return '<img class="ui massive rounded bordered image"  alt="Embedded Image" src="data:image/png;base64,' + textMarker + '"/>';

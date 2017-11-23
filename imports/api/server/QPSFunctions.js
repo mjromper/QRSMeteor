@@ -118,13 +118,20 @@ function linkVirtualProxyToProxy(virtualProxy) {
         // ADD THE NEW VIRTUAL PROXY TO THE EXISTING PROXY LIST
     proxyConfig.settings.virtualProxies.push(virtualProxy)
 
+    try {
+        check(Meteor.settings.public.qlikSensePort, String);
+        check(Meteor.settings.public.qlikSensePortSecure, String);
+        check(Meteor.settings.broker.qlikSense.proxyAllowHTTP, String);
+    } catch (error) {
+        console.error('settings file incomplete, your are missing the qliksenseport, un')
+    }
+
     //UPDATE SOME PROXY SETTINGS
     console.log('UPDATE SOME PROXY SETTINGS...')
-    proxyConfig.settings.unencryptedListenPort = Meteor.settings.public.qlikSensePort; //HTTP    
-    console.log('proxyConfig.settings.unencryptedListenPort', proxyConfig.settings.unencryptedListenPort)
+    proxyConfig.settings.unencryptedListenPort = Meteor.settings.public.qlikSensePort; //HTTP        
     proxyConfig.settings.listenPort = Meteor.settings.public.qlikSensePortSecure; //HTTPS
     proxyConfig.settings.allowHttp = Meteor.settings.broker.qlikSense.proxyAllowHTTP;
-    console.log('proxyConfig.settings.allowHttp', proxyConfig.settings.allowHttp)
+
 
     //OVERWRITE THE SETTINGS WITH THE COMPLETE UPDATED OBJECT.
     updateProxy(proxyId, proxyConfig)
@@ -264,7 +271,7 @@ Meteor.methods({
         var customer = response.customer;
         var user = response.user;
 
-        // console.log('UserID currently logged in in the demo platform: ' + loggedInUser + '. Meteor server side thinks the meteor.userId is ' + Meteor.userId() + '. We use this as the UDC name');
+        console.log('UserID currently logged in in the demo platform: ' + loggedInUser + '. Meteor server side thinks the meteor.userId is ' + Meteor.userId() + '. We use this as the UDC name');
         // Create a paspoort (ticket) request: user directory, user identity and attributes
         var passport = {
             'UserDirectory': Meteor.userId(), // Specify a dummy value to ensure userID's are unique E.g. "Dummy", or in my case, I use the logged in user, so each user who uses the demo can logout only his users, or the name of the customer domain if you need a Virtual proxy per customer
@@ -280,7 +287,7 @@ Meteor.methods({
                 },
             ],
         };
-        // console.log('Request ticket for this user passport": ', passport);
+        console.log('Request ticket for this user passport": ', passport);
 
         // logging only
         var call = {};
@@ -477,10 +484,14 @@ export function logoutUser(UDC, name, proxy) {
 
 // based on Rikard Braathen's QlikAuth module
 export function getRedirectURL(passport, proxyRestUri, targetId, generationUserId) {
-    check(passport, Object);
-    check(proxyRestUri, String);
-    check(targetId, String);
-    check(generationUserId, String);
+    try {
+        check(passport, Object);
+        check(proxyRestUri, String);
+        check(targetId, String);
+        check(generationUserId, String);
+    } catch (error) {
+        throw new Meteor.error('Request ticket failed', 'You did not specify a pasport, proxyUri, targetId  or generationUserID', error);
+    }
 
     // console.log('entered server side requestTicket module for user and passport', passport, proxyRestUri);
     // see https://help.qlik.com/en-US/sense-developer/3.0/Subsystems/ProxyServiceAPI/Content/ProxyServiceAPI/ProxyServiceAPI-ProxyServiceAPI-Authentication-Ticket-Add.htm
@@ -491,7 +502,7 @@ export function getRedirectURL(passport, proxyRestUri, targetId, generationUserI
 
     try {
         var call = {};
-        call.action = 'STEP 5: Request ticket at endpoint received from Sense: ' + proxyRestUri;
+        call.action = 'STEP 5: Request ticket at endpoint received from Sense';
         call.request = proxyRestUri + 'ticket'; // we use the proxy rest uri which we got from the redirect from the proxy (the first bounce)
         call.url = gitHubLinks.requestTicket;
         call.response = HTTP.call('POST', call.request, {
@@ -505,15 +516,15 @@ export function getRedirectURL(passport, proxyRestUri, targetId, generationUserI
         REST_Log(call, generationUserId);
     } catch (err) {
         console.error('REST call to request a ticket failed', err);
-        throw new Meteor.Error('Request ticket failed', err.message);
+        throw new Meteor.Error('Request ticket failed via getRedirectURL', err.message);
     }
 
-    // console.log('The HTTP REQUEST to Sense QPS API:', call.request);
-    // console.log('The HTTP RESPONSE from Sense QPS API: ', call.response);
+    console.log('The HTTP REQUEST to Sense QPS API:', call.request);
+    console.log('The HTTP RESPONSE from Sense QPS API: ', call.response);
     var ticketResponse = call.response.data;
     call.action = 'STEP 6: Use response from our ticket request to create redirect url';
     call.request = 'Use the redirect url we got back and the ticket string to make a redirect url for the client. Format: ' + ticketResponse.TargetUri + '?QlikTicket=' + ticketResponse.Ticket + '. JSON received: ' + ticketResponse;
-    REST_Log(call);
+    // REST_Log(call);
 
 
     // Build redirect URL for the client including the ticket
@@ -526,6 +537,6 @@ export function getRedirectURL(passport, proxyRestUri, targetId, generationUserI
     if (!redirectURI) {
         redirectURI = 'http://' + senseConfig.host + ':' + senseConfig.port + '/' + senseConfig.virtualProxyClientUsage + '/' + hub;
     }
-    // console.log('Meteor server side created this redirect url: ', redirectURI);
+    console.log('Meteor server side created this redirect url: ', redirectURI);
     return redirectURI;
 }
