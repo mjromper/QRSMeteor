@@ -198,6 +198,7 @@ if (window.location.href.indexOf("saasdemo") > -1) {
 
 //disabled to ensure we only use anonymous users via https://github.com/artwells/meteor-accounts-guest/
 // Load a authentication check handler, depending on which domain it runs.
+//if the code below is enabled, we will login as a dummy user in dev, or using qlik.com id
 if (window.location.href.indexOf("qlik.com") > -1) {
     Router.onBeforeAction(mustBeSignedInQlik, { except: [undefined, 'documentation'] });
 
