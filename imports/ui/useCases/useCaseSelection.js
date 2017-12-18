@@ -23,7 +23,7 @@ var app = null;
 var qix = null;
 
 
-var possibleRoles = ['Business Manager', 'Product Manager', 'Developer'];
+var possibleRoles = ['All Content', 'Business Manager', 'Product Manager', 'Developer'];
 
 // ONCREATED
 Template.useCaseSelection.onCreated(async function() {
@@ -66,6 +66,9 @@ Template.useCaseSelection.onRendered(async function() {
     $('.ui.dropdown')
         .dropdown({
             async onChange(group, text, selItem) {
+                if (group === 'All Content'){
+                    group = 'SOE'; 
+                }
                 // Meteor.call('logoutPresentationUser', Meteor.userId(), Meteor.userId()); //udc and user are the same for presentation user                    
                 Cookies.set('currentMainRole', group);
                 console.log('qix', qix)
