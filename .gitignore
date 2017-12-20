@@ -1,6 +1,5 @@
 settings-development.json
 settings-production.json
-node_modules/
 .build/
 settings.json
 *.txt
