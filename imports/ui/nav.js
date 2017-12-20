@@ -99,11 +99,6 @@ async function abortQlikModalState() {
     qix.app.abortModal(true);
 }
 
-Template.yourSaasPlatformMenu.onRendered(function() {
-    this.$('.ui.dropdown')
-        .dropdown()
-});
-
 export async function selectMenuItemInSense(slide) {
     console.log('selectMenuItemInSense - slide', slide)
     Cookies.set('currentMainRole', 'TECHNICAL');
