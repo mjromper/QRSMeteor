@@ -13,7 +13,7 @@
     "MONGO_URL": "mongodb://localhost:27017/"
   },
   "server": {
-    "host": "one-staging.qlik.com",
+    "host": "one.qlik.com",
     "username": "ubuntu",
     "deploymentDir": "/var/www/projects/meteor-apps",
     "loadProfile": "",
