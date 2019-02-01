@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700');
+
+
+/* You can add custom styles to this file, they will override brand.css */
+#contentContainer {
+    overflow: hidden;
+}
+
+
+#locatorContainer > aside {
+    background: #ffffff;
+    padding: .25em 1em;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    left: 0 !important; 
+    transform: translateX(0); !important 
+    z-index: 999;
+    top: 0;
+}
+
+#locatorContainer #searchCriteriaContainer {
+    /*overflow: hidden;*/
+    background: #e7e7e7;
+    padding: 1em;
+    border: 1px solid #9fa1a4;
+    border-radius: 5px;
+}
+
+#advancedFilterContainer{
+    padding: 0px 26px;
+}
+
+.buttonLocator{
+    margin: 0px;
+	overflow: hidden;
+}
+
+.searchItemContainer {
+  margin-bottom: 0px;
+}
+
+
+
+/* Temporary changes for the Locator popup */
+
+body.element_1451 {font-family: 'Source Sans Pro';}
+
+#cookiesContainer  {
+background: #870064 !important;
+}
+
+body {font-family: 'Source Sans Pro';
+
+}
+
+
+.element_1451 button.cookiesAccept {
+     background: #009845;
+    border: #009845;
+ }
+
+.element_1451 .cc-cookies button:hover.cookiesAccept:hover {
+     background: #006937;
+    border: #006937;
+}
+
+body.element_1451#bodyLoggedOut #partnerLocatorTabs1 a {
+color: #009845 !important;
+}
+
+body.element_1451#bodyLoggedOut #partnerLocatorTabs {
+    border-bottom: 1px solid #009845 !important
+}
+
+/*Changes 20181105 test - https://zift123.zendesk.com/agent/tickets/87073*/
+
+a.button, .btn-primary, .cc-cookies button.cookiesAccept {
+    text-decoration: none;
+    background: #009845;
+    border: 1px solid #009845;
+    font-size: 1em;
+}
+a {
+    color: #009845;
+    text-decoration: none;
+}
+ 
+ a:hover{
+     color: #006937 !important;
+ }
+
+
+.topHeader {
+    background: #F3F5F8 !important;
+}
+p {
+    font-size: 1em;
+    color: #54565A;
+}
+
+#leftNav>li>ul li>ul li a {
+    padding-left: 10px;
+    border-left: 10px solid #006580;
+    border-bottom: 0px;
+}
+#leftNav li a:hover, #leftNav li a:focus, #leftNav li a:active {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    background: #006580;
+}
+
+element.style {
+}
+@media (min-width: 992px)
+#footerContainer {
+    background-position: right 45px, 4% bottom;
+}
+#footerContainer {
+    background-color: #54565A !important;
+
+}
+#navigation > a{
+    color: #FFFFFF !important;
+}
+
+#leftNav li.selected {
+    background-color: #244b5a
+}
+
+#leftNav li.selected ul li.selected {
+    background-color: #006580
+}
+
+#leftNav li.selected ul li.selected a {
+    color: #fff;
+}
+
+.contactDiv h3{
+
+
+}
+
+#copyWrite {
+    color: #FFFFFF; 
+}
+
+
+.contactDiv a {
+    color: #FFF;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:active, .dropdown-menu>li.active>a:hover, .dropdown-menu>li.active>a:focus, .dropdown-menu>li.active>a:active {
+   color: #006937 !important;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:active {
+    color: #006937 !important;
+}
+
+
+#footerContainer {
+    background-image:none;
+}
+
+.navbar-default .navbar-nav>li:hover>a {
+    color: #006937 !important;
+}
+
+.element_923 .navbar-default .navbar-nav>li>a {
+    color: #006937 !important;
+} 
+
+.btn-primary:hover{
+    background: #006937 !important;
+   border: 1px solid #006937 !important;
+   color: white !important;
+}
+
+.btn-primary.btn-download{
+    float: right;
+    margin: 25px 0 0 0;
+    color: #fff;
+    font-weight: 700;
+    padding: .33rem .5rem;
+    font-size: 0.95rem;
+    text-transform: none;
+}
+
+@media (max-width: 767px) {
+
+.navbar-default .navbar-toggle {background: #009845 !important;}
+
+#headNavbarContainerWrapper {
+    border-bottom: 5px solid #009845 ;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:active {
+    background: #006937 !important;
+}
+}
+
+table thead {
+    background: #009845;
+}

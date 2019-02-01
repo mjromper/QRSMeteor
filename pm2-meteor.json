@@ -3,7 +3,7 @@
   "appLocation": {
     "local": "./"
   },
-  "meteorSettingsLocation": "/Users/aor/Devel/gear/onepresales/settings.json",
+  "meteorSettingsLocation": "/Users/aor/Devel/gear/qtst/settings.json",
   "meteorSettingsInRepo": false,
   "prebuildScript": "",
   "meteorBuildFlags": "--architecture os.linux.x86_64",

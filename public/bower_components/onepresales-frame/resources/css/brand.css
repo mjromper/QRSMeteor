@@ -20,6 +20,8 @@
 ============================================================================= */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700');
+
 html {
     font-size: 100%;
 }
@@ -80,10 +82,10 @@ th {
 
 #contentContainer {
     padding-bottom: 0;
-    min-height: calc(100vh - 400px);
-    /*background: url('../borders/images/set-1.png') no-repeat 102% 0;*/
-    min-height: 246px;
-    background-position: 102% 0;
+    min-height: calc(100vh - 500px);
+    /*background: url('../borders/images/set-1.png') no-repeat 102% 0;
+	min-height: 246px;
+    background-position: 102% 0;*/
 }
 
 
@@ -365,7 +367,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .header-profile .my-profile-link {
-    /*background: transparent url(../borders/images/icon-desktop-globe.png) 0 no-repeat;*/
+    background: transparent url(../borders/images/icon-desktop-globe.png) 0 no-repeat;
     padding-left: 20px;
 }
 
@@ -376,7 +378,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .header-profile .logout-link {
-    /*background: transparent url(../borders/images/icon-desktop-logon.png) 0 no-repeat;*/
+    background: transparent url(../borders/images/icon-desktop-logon.png) 0 no-repeat;
     padding-left: 20px;
 }
 
@@ -416,7 +418,7 @@ fieldset[disabled] .btn-primary.active {
 #searchform input {
     width: 150px;
     height: 30px;
-    /*background: transparent url(../borders/images/icon-search.png) no-repeat right 15px center;*/
+    background: transparent url(../borders/images/icon-search.png) no-repeat right 15px center;
     border: 1px solid #ccc;
     padding: 0 25px 0 10px;
     color: #999999;
@@ -603,20 +605,20 @@ choose_task {
     top: -1px;
     right: -1px;
 }
-
+/*
 #pipelineVStarget {
-    /*background: url('../borders/images/pipelineVStarget.jpg') repeat scroll 0 0 transparent;*/
+    background: url('../borders/images/pipelineVStarget.jpg') repeat scroll 0 0 transparent;
 }
 
 #PipelineValuebyStage {
-    /*background: url('../borders/images/PipelineValuebyStage.jpg') repeat scroll 0 0 transparent;*/
+    background: url('../borders/images/PipelineValuebyStage.jpg') repeat scroll 0 0 transparent;
 }
-
+*/
 .linkedin {
     float: right;
     width: 60px;
     height: 20px;
-   /*background: url(../borders/images/linked-in.png);*/
+    background: url(../borders/images/linked-in.png);
     margin: 0 0 20px 0;
     display: block;
 }
@@ -630,15 +632,15 @@ div#menu-tabs {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    /*Background: url("../borders/images/bg_nav.png") repeat scroll 0 0 #535353;*/
+    Background: url("../borders/images/bg_nav.png") repeat scroll 0 0 #535353;
 }
 
 div#menu-tabs .menu ul li a {
-    /*background: url("../borders/images/bg_nav.png") repeat scroll 0 0 transparent;*/
+    background: url("../borders/images/bg_nav.png") repeat scroll 0 0 transparent;
 }
 
 div#menu-tabs .menu ul li a:hover {
-    /*background: url("../borders/images/bg_navhover.png") repeat scroll 0 0 transparent;*/
+    background: url("../borders/images/bg_navhover.png") repeat scroll 0 0 transparent;
 }
 
 div#menu-tabs .menu ul li.homeLink a {
@@ -996,7 +998,7 @@ div.EventDetailsListing div.row {
 .visible-xs>#searchbar input {
     padding-left: 15px;
     margin: 0px;
-    /*background: white url("../borders/images/icon-search.png") no-repeat scroll right 15px center;*/
+    background: white url("../borders/images/icon-search.png") no-repeat scroll right 15px center;
     width: 100%;
     font-family: inherit;
     font-size: inherit;
@@ -1366,7 +1368,7 @@ p.error {
     bottom: 0;
     padding-top: 30px;
     padding-bottom: 150px;
-    background: url('../img/rings-right-vector.svg') no-repeat right 45px, url('../img/rings-bottom-vector.svg') no-repeat 10% bottom;
+    background: url('../borders/images/rings-right-vector.svg') no-repeat right 45px, url('../borders/images/rings-bottom-vector.svg') no-repeat 10% bottom;
     background-color: #efefef;
     /*padding-right: 8%;
     padding-left: 8%;*/
@@ -1661,7 +1663,7 @@ body.managemycolleagues div.mailboxLabel label {
 ============================================================================= */
 
 div.showReportContainer {
-    /*background: url("../borders/images/icon-report.png") no-repeat scroll 0 0 / 40px auto rgba(0, 0, 0, 0);*/
+    background: url("../borders/images/icon-report.png") no-repeat scroll 0 0 / 40px auto rgba(0, 0, 0, 0);
     display: block;
     min-height: 40px;
     padding-left: 50px;
@@ -1768,7 +1770,7 @@ ul#businessPlanTabs li a:focus {
     color: #fff;
 }
 
-ul#businessPlanTabs a.businessPlanRejected {
+/*ul#businessPlanTabs a.businessPlanRejected {
     background-image: url("/images/icons/businessPlans/businessPlansRejected.png");
 }
 
@@ -1783,6 +1785,7 @@ ul#businessPlanTabs a.businessPlanDraft {
 ul#businessPlanTabs a.businessPlanRevisionNeeded {
     background-image: url("/images/icons/businessPlans/businessPlanRevisionNeeded.png");
 }
+*/
 
 #BusinessPlan .tab-pane {
     background: #ffffff;
@@ -2072,3 +2075,46 @@ form#fundRequestActivityForm h2 {
 }
 
 div[id^="Checkbox_919_"] {display:none;}
+
+.dropdown-submenu i.fa {
+  right: 10px;
+  top: 14px;
+  font-size: 14px;
+}
+
+.checkbox-col {
+display: inline-block;
+}
+
+
+
+
+
+
+/* Temporary changes for the Locator popup */
+
+body.element_1451 {font-family: 'Source Sans Pro',Helvetica,Roboto,Arial,sans-serif;}
+
+.element_1451 #cookiesContainer  {
+background-color: #870064
+}
+
+
+
+.element_1451 button.cookiesAccept {
+     background: #009845;
+    border: #009845;
+ }
+
+.element_1451 .cc-cookies button:hover.cookiesAccept:hover {
+     background: #006937;
+    border: #006937;
+}
+
+body.element_1451#bodyLoggedOut #partnerLocatorTabs1 a {
+color: #009845 !important;
+}
+
+body.element_1451#bodyLoggedOut #partnerLocatorTabs {
+    border-bottom: 1px solid #009845 !important
+}

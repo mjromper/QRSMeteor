@@ -69,7 +69,7 @@ window.initOnePresales = function initOnePresales(website) {
     loadHTML('bower_components/onepresales-frame/html/footer.html', 'footerContainer');
 
     var html1 = "",
-        html2 = "",
+        //html2 = "",
         classActive = '';
 
     thisTool = website || "general";
@@ -87,8 +87,8 @@ window.initOnePresales = function initOnePresales(website) {
     //}
 
     document.addEventListener("onepresales-frame-header", function() {
-        document.getElementById("navbar-onepresales-left").innerHTML = html1;
-        document.getElementById("navbar-onepresales-right").innerHTML = html2;
+        document.getElementById("mainNavigation").innerHTML = html1;
+        //document.getElementById("navbar-onepresales-right").innerHTML = html2;
 
         var cookieUser = getCookie("user");
         if (cookieUser) {
