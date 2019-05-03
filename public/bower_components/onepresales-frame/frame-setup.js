@@ -2,7 +2,8 @@ var SITES = {
     "answers": "Technical Insights",
     "sizing": "Sizing Advisor",
     "qmi": "QMI",
-    "slidesgen": "Presentation Explorer"
+    "slidesgen": "Presentation Explorer",
+    "metrics": "Performance Metrics"
 };
 var cbMessageTimeout;
 var thisTool = "general";

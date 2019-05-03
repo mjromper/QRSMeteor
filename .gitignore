@@ -24,3 +24,4 @@ public/docs/~$ik Sense SaaS demo tool setup instructions.docx
 package-lock.json
 certs
 node_modules
+yarn-error.log
